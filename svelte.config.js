@@ -6,7 +6,12 @@ import { resolve } from 'path';
 const config = {
 	preprocess: preprocess(),
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			pages: 'build',  // path to public directory
+			assets: 'build',  // path to public directory
+			fallback: null,
+		}),
+		target: '#svelte',
 		vite: () => ({
 			resolve: {
 				alias: {
