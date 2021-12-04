@@ -1,0 +1,39 @@
+@import '../styles/mixins.scss';
+
+$contentWidth: 1032px;
+$productsWidth: 312px;
+$productsPading: 40px;
+$stepWidth: 592px;
+$stepPading: 88px;
+
+.Layout {
+  --Layout-margin-width: calc((100% - #{$contentWidth}) / 2);
+
+  &__Content {
+    display: flex;
+    height: 100vh;
+  }
+
+  &__Products {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+
+    @include desktopStyles {
+      position: static;
+      width: calc(#{$productsWidth} + #{$productsPading} + var(--Layout-margin-width));
+      padding: 0 $productsPading 0 var(--Layout-margin-width);
+      background-color: lightblue;
+    }
+  }
+
+  &__Step {
+    width: 100%;
+    
+    @include desktopStyles {
+      padding: 0 var(--Layout-margin-width) 0 $stepPading;
+      width: calc(#{$stepWidth} + #{$stepPading} + var(--Layout-margin-width));
+    }
+  }
+}

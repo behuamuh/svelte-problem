@@ -1,0 +1,12 @@
+@mixin desktopStyles {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin lineClampStyles($lines: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
