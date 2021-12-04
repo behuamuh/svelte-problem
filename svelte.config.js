@@ -15,6 +15,11 @@ const config = {
 				},
 			},
 		}),
+		appDir: 'app',
+		paths: {
+			// YOUR github repository name
+			base: '/svelte-problem',
+		},
 	},
 };
 
